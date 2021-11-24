@@ -10,7 +10,7 @@
     "start": "concurrently \"npm run start:server\" \"npm run start:web-app\"",
     "db:with-source": "ts-node src/job-source-resolution.ts",
     "install": "cd web-app && npm install",
-    "build": "cd client && npm run build",
+    "build": "cd web-app && npm run build",
     "heroku-postbuild": "npm run build"
   },
   "author": "Michael Betances",

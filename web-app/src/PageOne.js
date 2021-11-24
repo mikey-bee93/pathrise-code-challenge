@@ -13,7 +13,7 @@ export const PageOne = () => {
   
     useEffect(() => {
       const fetchJobData = async () => {
-        const { data } = await axios.get("http://localhost:5000/jobs");
+        const { data } = await axios.get("/jobs");
         setLoading(false);
         setJobData(data);
       };

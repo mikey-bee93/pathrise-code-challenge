@@ -17,7 +17,7 @@ export const PageTwo = () => {
             <header>
                 <h1>Job Source: {boardName} </h1>
             </header>
-            <Container className="card-container">
+            <Container>
                 <Table bordered style={{ width: "1300px" }} size="md">
                     <thead>
                         <tr>

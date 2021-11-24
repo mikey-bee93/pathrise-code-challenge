@@ -33,22 +33,22 @@ export const PageOne = () => {
             </header>
             <Container>
                 <Row>
-                {jobBoards.map((board, index) => (
-                    <Col className="card-container" sm="4" key={index} onClick={() => {
-                        const filteredJobs = jobData.filter(job => job.jobSource === board.name).sort((a, b) => b.id - a.id);
-                        navigate("/job-sources", { state: { boardName: board.name, jobs: filteredJobs }})
-                    }}>
-                    <Card className="card-body">
-                        <div className="job-rating">
-                        <span>{board.rating}</span>
-                        </div>
-                        <div className="card-body-container">
-                        <img src={board.logo_file} alt={board.name} className="card-image" />
-                        <p className="board-description">{board.description}</p>
-                        </div>
-                    </Card>
-                    </Col>
-                ))}
+                    {jobBoards.map((board, index) => (
+                        <Col className="card-container" sm="4" key={index} onClick={() => {
+                            const filteredJobs = jobData.filter(job => job.jobSource === board.name).sort((a, b) => b.id - a.id);
+                            navigate("/job-sources", { state: { boardName: board.name, jobs: filteredJobs }})
+                        }}>
+                        <Card className="card-body">
+                            <div className="job-rating">
+                            <span>{board.rating}</span>
+                            </div>
+                            <div className="card-body-container">
+                            <img src={board.logo_file} alt={board.name} className="card-image" />
+                            <p className="board-description">{board.description}</p>
+                            </div>
+                        </Card>
+                        </Col>
+                    ))}
                 </Row>
             </Container>
         </div>

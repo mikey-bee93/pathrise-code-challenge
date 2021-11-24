@@ -16,7 +16,7 @@ server.use(express.urlencoded({
 
 // Serve up static assets
 if (process.env.NODE_ENV === "production") {
-    server.use(express.static("web-app/build"));
+    server.use(express.static("client/build"));
   }
 
 const jobDataSource = new JobDataSource(getPool());

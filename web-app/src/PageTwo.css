@@ -1,0 +1,11 @@
+.table-cell {
+    text-overflow: ellipsis;
+    text-align: left;
+    max-width: 400px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.table-column-labels {
+    text-align: left;
+}

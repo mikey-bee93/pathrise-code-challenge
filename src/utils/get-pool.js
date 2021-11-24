@@ -1,8 +1,8 @@
-import path from "path";
-import fs from "fs";
-import * as fastCsv from "fast-csv";
+const path = require("path");
+const fs = require("fs");
+const fastCsv = require("fast-csv");
 
-export const getPool = () => {
+const getPool = () => {
     let csvData = [];
     fs.createReadStream(path.join(process.cwd(), "seed/job_opportunities.csv"))
         .pipe(fastCsv.parse({
@@ -29,3 +29,5 @@ export const getPool = () => {
         });
     return csvData;
 };
+
+module.exports = getPool;

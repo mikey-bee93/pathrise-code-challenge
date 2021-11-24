@@ -1,12 +1,11 @@
-export class ResponseError extends Error {
-    private statusCode: number;
+class ResponseError extends Error {
     constructor(message, statusCode) {
         super(message);
         this.statusCode = statusCode;
     }
 }
 
-export const wrapAsync = fn => {
+const wrapAsync = fn => {
     return async(req, res, next) => {
         try {
             await fn(req, res, next);
@@ -16,3 +15,5 @@ export const wrapAsync = fn => {
         }
     }
 };
+
+module.exports = { ResponseError, wrapAsync };

@@ -1,7 +1,6 @@
-import jobBoardsJson from "../jobBoards.json";
-import { Job, JobWithSource } from "../types";
+const jobBoardsJson = require("../jobBoards.json");
 
-export const mapJobSourceToJob = (jobs: Job[]): JobWithSource[] => {
+const mapJobSourceToJob = (jobs) => {
     const jobBoards = jobBoardsJson.job_boards.map(val => ({ name: val.name, rootDomain: val.root_domain }));
     const jobsWithSources = jobs.map(job => {
         if (job.companyName && jobBoards.find(board => board.name === job.companyName)) {
@@ -34,3 +33,5 @@ export const mapJobSourceToJob = (jobs: Job[]): JobWithSource[] => {
 
     return jobsWithSources;
 };
+
+module.exports = mapJobSourceToJob;

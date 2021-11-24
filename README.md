@@ -13,13 +13,13 @@ The code for the server can be found under the root `src` directory. The archite
  - Services
 	 - The services/modules that are responsible for handling the bulk of the application logic for that respective service (i.e. the `jobService` is responsible for handling any business logic related to jobs within the application). Here you will find the logic used to resolve the job opportunity csv data and convert it into the appropriate data with their respective job sources.
  
- I followed this particular architecture because it allows for us to have an organized structure for a microservice and allows for us to practice Inversion of Control, ensuring that each layer of the application structure contains logic related to just its required functions and dependencies.
+ I followed this particular architecture because it allows for us to have an organized structure for a microservice and ensuring that each layer of the application structure contains logic related to just its required functions and dependencies.
 
 #### Dependencies Used
 
  - Express (Used for HTTP/Routing)
- - Typescript (Type safety within our Javascript code)
  - FastCsv (Used for parsing and creating CSV files)
+ - If-Env (Helper used for Environments/Deployment)
 
 ## How to Run Locally
 

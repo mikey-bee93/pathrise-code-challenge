@@ -1,9 +1,13 @@
-import * as fastCsv from "fast-csv";
-import fs from "fs";
-import path from "path";
-import { mapJobSourceToJob } from "./utils";
+// import * as fastCsv from "fast-csv";
+// import fs from "fs";
+// import path from "path";
+// import { mapJobSourceToJob } from "./utils";
+const fastCsv = require("fast-csv");
+const fs = require("fs");
+const path = require("path");
+const mapJobSourceToJob = require("./utils/map-job-source");
 
-const convertToJobSourceResolution = async (): Promise<void> => {
+const convertToJobSourceResolution = () => {
     let csvData = [];
     fs.createReadStream(path.join(process.cwd(), "seed/job_opportunities.csv"))
         .pipe(fastCsv.parse({
